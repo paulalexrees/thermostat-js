@@ -89,7 +89,7 @@ describe("Thermostat", function() {
 		});
 	});
 
-	describe("#_isPowerSavingOn", function() {
+	describe("powerSavingOn", function() {
 		it("should initialize as true", function() {
 			expect(thermostat.powerSavingOn).toEqual(true);
 		});
