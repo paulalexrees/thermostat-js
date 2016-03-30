@@ -68,6 +68,17 @@ describe("Thermostat", function(){
       expect(thermostat.temperatureColour()).toEqual('#03e823')
     })
 
-    
+    it('changes yellow', function() {
+      expect(thermostat.temperatureColour()).toEqual('#ffe24f')
+    })
+
+    it('changes red', function() {
+      for(i=1; i <=5; i++){
+        thermostat.increaseTemperature();
+      }
+      expect(thermostat.temperatureColour()).toEqual('#ff2854')
+    })
+
+
   })
 });

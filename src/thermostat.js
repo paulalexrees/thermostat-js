@@ -39,8 +39,14 @@ const MINIMUM_TEMPERATURE = 10;
   Thermostat.prototype.temperatureColour = function () {
     if (this.getCurrentTemperature() < 18) {
       return '#03e823';
+    }
+    else if (this.getCurrentTemperature() < 25){
+      return '#ffe24f'
+    }
+    else {
+      return '#ff2854';
     };
-  }
+  };
 
   Thermostat.prototype._maxTemperature = function () {
     if (this.powerSave === true) {
