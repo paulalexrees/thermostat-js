@@ -21,6 +21,13 @@ describe("Thermostat", function(){
       thermostat.decreaseTemperature();
       expect(thermostat.temperature).toEqual(19);
     });
+
+    it("cannot reduce temperature minimum temperature", function(){
+      for(i=1; i <=20; i++){
+        thermostat.decreaseTemperature();
+      }
+      expect(thermostat.temperature).toEqual(10);
+    });
   });
 
 });
