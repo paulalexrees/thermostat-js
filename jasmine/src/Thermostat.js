@@ -8,6 +8,10 @@ function Thermostat(){
     this.savingModeOn = true;
 };
 
+Thermostat.prototype.getTemp = function(){
+  return this.temp;
+};
+
 Thermostat.prototype.upButton = function(){
 	if(this.temp >= this.maxTemp()){
 		this.temp = this.maxTemp();
@@ -17,7 +21,7 @@ Thermostat.prototype.upButton = function(){
 };
 
 Thermostat.prototype.downButton = function(){
-  if(this.temp<=MIN_TEMP){ 
+  if(this.temp<=MIN_TEMP){
     this.temp = MIN_TEMP;
   }
   else{
@@ -39,4 +43,18 @@ Thermostat.prototype.maxTemp = function(){
 	} else {
 		return MAX_TEMP_POWER_SAVING_OFF;
 	};
+};
+
+Thermostat.prototype.resetButton = function(){
+  this.temp = DEFAULT_TEMP;
+};
+
+Thermostat.prototype.displayColor = function(){
+  if(this.getTemp()<18){
+    return "low-usage";
+  } else if(this.getTemp() > 24) {
+    return "high-usage";
+  } else {
+    return "medium-usage";
+  };
 };
