@@ -50,12 +50,12 @@ describe("Thermostat", function(){
     });
   });
 
-  describe("#resetTemmperature", function() {
+  describe("#resetTemperature", function() {
     it("resets the current temparature to defualt", function() {
       for(i=1; i <=5; i++){
         thermostat.decreaseTemperature();
       }
-      thermostat.resetTemmperature();
+      thermostat.resetTemperature();
       expect(thermostat.getCurrentTemperature()).toEqual(20);
     })
   });
