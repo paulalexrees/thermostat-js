@@ -28,7 +28,9 @@ const MINIMUM_TEMPERATURE = 10;
     this.powerSave ? false : true;
   }
 
-
+  Thermostat.prototype.resetTemmperature = function() {
+    this.temperature = DEFAULT_TEMPERATURE;
+  }
 
   Thermostat.prototype._maxTemperature = function () {
     if (this.powerSave === true) {

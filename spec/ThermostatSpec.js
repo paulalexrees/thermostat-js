@@ -31,10 +31,9 @@ describe("Thermostat", function(){
       }
       expect(thermostat.temperature).toEqual(25);
     });
-
   });
 
-  describe("decreaseTemperature", function(){
+  describe("#decreaseTemperature", function(){
     it("decrease temoerature by 1", function(){
       thermostat.decreaseTemperature();
       expect(thermostat.temperature).toEqual(19);
@@ -48,4 +47,13 @@ describe("Thermostat", function(){
     });
   });
 
+  describe("#resetTemmperature", function() {
+    it("resets the current temparature to defualt", function() {
+      for(i=1; i <=5; i++){
+        thermostat.decreaseTemperature();
+      }
+      thermostat.resetTemmperature();
+      expect(thermostat.temperature).toEqual(20);      
+    })
+  });
 });
