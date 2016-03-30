@@ -36,6 +36,11 @@ const MINIMUM_TEMPERATURE = 10;
     this.temperature = DEFAULT_TEMPERATURE;
   };
 
+  Thermostat.prototype.temperatureColour = function () {
+    if (this.getCurrentTemperature() < 18) {
+      return '#03e823';
+    };
+  }
 
   Thermostat.prototype._maxTemperature = function () {
     if (this.powerSave === true) {

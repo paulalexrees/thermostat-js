@@ -59,4 +59,15 @@ describe("Thermostat", function(){
       expect(thermostat.getCurrentTemperature()).toEqual(20);
     })
   });
+
+  describe('#temperatureColour', function() {
+    it('changes green', function() {
+      for(i=1; i <=5; i++){
+        thermostat.decreaseTemperature();
+      }
+      expect(thermostat.temperatureColour()).toEqual('#03e823')
+    })
+
+    
+  })
 });
