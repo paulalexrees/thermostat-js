@@ -8,3 +8,24 @@ body {
 form {
 	display: inline-block;
 }
+
+div {
+	border: 1px solid black;
+	width: 300px;
+	margin: 10px auto;
+	color: black;
+}
+
+.low-usage {
+	background-color: green;
+}
+
+
+.medium-usage {
+	background-color: yellow;
+}
+
+
+.high-usage {
+	background-color: red;
+}
