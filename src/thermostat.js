@@ -6,8 +6,12 @@ function Thermostat(temperature = DEFAULT_TEMPERATURE) {
 const DEFAULT_TEMPERATURE = 20;
 const MINIMUM_TEMPERATURE = 10;
 
+  Thermostat.prototype.getCurrentTemperature = function () {
+    return this.temperature;
+  };
+
   Thermostat.prototype.increaseTemperature = function () {
-    if (this.temperature < this._maxTemperature()) {
+    if (this.getCurrentTemperature() < this._maxTemperature()) {
       this.temperature++;
     }
     else {
@@ -16,7 +20,7 @@ const MINIMUM_TEMPERATURE = 10;
   };
 
   Thermostat.prototype.decreaseTemperature = function () {
-    if (this.temperature >= MINIMUM_TEMPERATURE) {
+    if (this.getCurrentTemperature() >= MINIMUM_TEMPERATURE) {
       this.temperature--;
     }
     else {
@@ -26,11 +30,12 @@ const MINIMUM_TEMPERATURE = 10;
 
   Thermostat.prototype.powerSaveSwitch = function() {
     this.powerSave ? false : true;
-  }
+  };
 
   Thermostat.prototype.resetTemmperature = function() {
     this.temperature = DEFAULT_TEMPERATURE;
-  }
+  };
+
 
   Thermostat.prototype._maxTemperature = function () {
     if (this.powerSave === true) {
