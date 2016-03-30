@@ -3,15 +3,19 @@
 
   <head>
     <title>Thermostat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
   </head>
 
   <body>
 
     <section>
-      <button id="increaseTemp">Increase temperature</button>
-      <button id="decreaseTemp">Decrease temperature</button>
-      <button id="resetTemp">Reset temperature</button>
-      <button id="togglePowerSaving">Toggle power saving</button>
+      <p>
+        <button id="increaseTemp">Increase temperature</button>
+        <button id="decreaseTemp">Decrease temperature</button>
+        <button id="resetTemp">Reset temperature</button>
+        Power saving mode is <span id='power-saving-status'>on</span>
+        <button id="togglePowerSaving">Toggle power saving</button>
+      </p>
     </section>
 
     <script src="src/thermostat.js"></script>
