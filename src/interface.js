@@ -1,17 +1,20 @@
 $(document).ready(function(){
 
   var thermostat = new Thermostat;
-
+  updateDisplay();
+function updateDisplay() {
   $('#temperature').text(thermostat.getCurrentTemperature());
+  $('#temperature').attr('class', thermostat.temperatureColour());
+};
 
   $('#increaseTemperature').on('click', function() {
     thermostat.increaseTemperature();
-    $('#temperature').text(thermostat.getCurrentTemperature());
+    updateDisplay();
   });
 
   $('#decreaseTemperature').on('click', function() {
     thermostat.decreaseTemperature();
-    $('#temperature').text(thermostat.getCurrentTemperature());
+    updateDisplay();
   });
 
   $('#powerSaveSwitch').on('click', function() {
@@ -21,6 +24,8 @@ $(document).ready(function(){
 
   $('#resetTemperature').on('click', function() {
     thermostat.resetTemperature();
-    $('#temperature').text(thermostat.getCurrentTemperature());
+    updateDisplay();
   });
+
+
 })

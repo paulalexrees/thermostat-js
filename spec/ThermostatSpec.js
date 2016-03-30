@@ -61,22 +61,22 @@ describe("Thermostat", function(){
   });
 
   describe('#temperatureColour', function() {
-    it('changes green', function() {
+    it('tells low-usage', function() {
       for(i=1; i <=5; i++){
         thermostat.decreaseTemperature();
       }
-      expect(thermostat.temperatureColour()).toEqual('#03e823')
+      expect(thermostat.temperatureColour()).toEqual('low-usage')
     })
 
-    it('changes yellow', function() {
-      expect(thermostat.temperatureColour()).toEqual('#ffe24f')
+    it('tells med-usage', function() {
+      expect(thermostat.temperatureColour()).toEqual('med-usage')
     })
 
-    it('changes red', function() {
+    it('tells hi-usage', function() {
       for(i=1; i <=5; i++){
         thermostat.increaseTemperature();
       }
-      expect(thermostat.temperatureColour()).toEqual('#ff2854')
+      expect(thermostat.temperatureColour()).toEqual('hi-usage')
     })
 
 

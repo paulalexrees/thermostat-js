@@ -47,13 +47,13 @@ const MINIMUM_TEMPERATURE = 10;
 
   Thermostat.prototype.temperatureColour = function () {
     if (this.getCurrentTemperature() < 18) {
-      return '#03e823';
+      return 'low-usage';
     }
     else if (this.getCurrentTemperature() < 25){
-      return '#ffe24f'
+      return 'med-usage'
     }
     else {
-      return '#ff2854';
+      return 'hi-usage';
     };
   };
 

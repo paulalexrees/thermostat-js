@@ -1,0 +1,11 @@
+.low-usage {
+  color: #03e823;
+}
+
+.med-usage {
+  color: #ffe24f;
+}
+
+.hi-usage {
+  color: #ff2854;
+}
