@@ -88,4 +88,15 @@ describe("Thermostat", function() {
 			expect(thermostat.energyUsage()).toEqual('high-usage');
 		});
 	});
+
+	describe("#_isPowerSavingOn", function() {
+		it("should initialize as true", function() {
+			expect(thermostat.powerSavingOn).toEqual(true);
+		});
+
+		it("should return false when power saving turned off", function() {
+			thermostat.togglePowerSaving();
+			expect(thermostat.powerSavingOn).toEqual(false);
+		});
+	});
 });
