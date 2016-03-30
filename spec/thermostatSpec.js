@@ -9,10 +9,24 @@ describe("Thermostat", function() {
 		expect(thermostat.temp).toEqual(20);
 	});
 
+	it("has a default maxTemp of 25", function() {
+		expect(thermostat.maxTemp).toEqual(25);
+	});
+
 	describe("#increaseTemp",function(){
 		it("should increase temperature by one", function(){
 			thermostat.increaseTemp();
 			expect(thermostat.temp).toEqual(21);
+		});
+
+		it("should have a maxTemp of 25", function() {
+			for(i = 1; i < 6; i ++) {
+				thermostat.increaseTemp();
+			}
+			var temp = function() {
+				thermostat.increaseTemp();
+			};
+			expect(temp).toThrow("Maximum temp reached");
 		});
 	});
 
@@ -21,31 +35,28 @@ describe("Thermostat", function() {
 			thermostat.decreaseTemp();
 			expect(thermostat.temp).toEqual(19);
 		});
+
+		it("should have a minimum temperature of 10", function() {
+			for(i = 1; i < 11; i++) {
+				thermostat.decreaseTemp();
+			}
+			var temp = function() {
+				thermostat.decreaseTemp();
+			};
+			expect(temp).toThrow("Minimum temp reached");
+		});
+	});
+
+	describe("#togglePowerSaving", function (){
+		it("should change maxTemp to 32 when turned off", function() {
+			thermostat.togglePowerSaving();
+			expect(thermostat.maxTemp).toEqual(32);
+		});
+
+		it("should change maxTemp to 25 when turned on", function() {
+			thermostat.togglePowerSaving();
+			thermostat.togglePowerSaving();
+			expect(thermostat.maxTemp).toEqual(25);
+		});
 	});
 });
-
-
-
-// describe("FizzBuzz", function() {
-// 	var fizzbuzz;
-//
-// 	beforeEach(function() {
-// 		fizzbuzz = new FizzBuzz();
-// 	});
-//
-// 	it("should return fizz if number is divisible by 3", function(){
-// 		expect(fizzbuzz.rules(3)).toEqual("fizz");
-// 	});
-//
-// 	it("should return buzz if number is divisible by 5", function(){
-// 		expect(fizzbuzz.rules(5)).toEqual("buzz");
-// 	});
-//
-// 	it("should return fizzbuzz if number is divisible by 5 and 3", function(){
-// 		expect(fizzbuzz.rules(15)).toEqual("fizzbuzz");
-// 	});
-//
-// 	it("should return the number if it is not divisible by 3 or 5", function(){
-// 		expect(fizzbuzz.rules(2)).toEqual(2);
-// 	});
-// });
