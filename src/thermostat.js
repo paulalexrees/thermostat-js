@@ -10,6 +10,15 @@ const MINIMUM_TEMPERATURE = 10;
     return this.temperature;
   };
 
+  Thermostat.prototype.powerSaveStatus = function () {
+    if (this.powerSave === true) {
+      return 'On';
+    }
+    else {
+      return 'Off';
+    };
+  };
+
   Thermostat.prototype.increaseTemperature = function () {
     if (this.getCurrentTemperature() < this._maxTemperature()) {
       this.temperature++;
@@ -20,7 +29,7 @@ const MINIMUM_TEMPERATURE = 10;
   };
 
   Thermostat.prototype.decreaseTemperature = function () {
-    if (this.getCurrentTemperature() >= MINIMUM_TEMPERATURE) {
+    if (this.getCurrentTemperature() > MINIMUM_TEMPERATURE) {
       this.temperature--;
     }
     else {
@@ -29,7 +38,7 @@ const MINIMUM_TEMPERATURE = 10;
   };
 
   Thermostat.prototype.powerSaveSwitch = function() {
-    this.powerSave ? false : true;
+    this.powerSave = !this.powerSave
   };
 
   Thermostat.prototype.resetTemperature = function() {
@@ -53,6 +62,6 @@ const MINIMUM_TEMPERATURE = 10;
       return 25;
     }
     else {
-      return 35;
+      return 32;
     };
   };

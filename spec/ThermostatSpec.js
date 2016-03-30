@@ -32,7 +32,7 @@ describe("Thermostat", function(){
       for(i=1; i <=20; i++){
         thermostat.increaseTemperature();
       }
-      expect(thermostat.getCurrentTemperature()).toEqual(25);
+      expect(thermostat.getCurrentTemperature()).toEqual(32);
     });
   });
 
