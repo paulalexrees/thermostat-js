@@ -3,3 +3,7 @@ function Thermostat(temperature = DEFAULT_TEMPERATURE) {
 };
 
 const DEFAULT_TEMPERATURE = 20;
+
+  Thermostat.prototype.increaseTemperature = function () {
+     this.temperature++;
+  };
