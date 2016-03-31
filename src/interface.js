@@ -40,4 +40,23 @@ $(document).ready(function(){
   });
 
 
+  (function(){
+    var temp = $("#temperature").val();
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:4567/temperature",
+      data: {"temperature": temp}
+    });
+    // $.post("http://localhost:4567/temperature", function(data) {
+    //   temp.html(data);
+    //   console.log(data);
+    // });
+  })();
+
+  // $(window).load(function(){
+  //   $.get("http://localhost:4567/temperature", function(data) {
+  //     $("#temperature").text(data.temp*******)
+  //   });
+  // });
+
 })

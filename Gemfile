@@ -1,0 +1,20 @@
+source 'https://rubygems.org'
+ruby '2.3.0'
+
+gem 'database_cleaner'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+gem 'dm-core'
+gem 'dm-validations'
+gem 'sinatra'
+gem 'bcrypt'
+gem 'sinatra-flash'
+gem 'coveralls'
+group :test do
+  gem 'shotgun'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'rspec'
+  gem 'pry'
+  gem 'rake'
+end
