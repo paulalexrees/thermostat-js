@@ -15,21 +15,23 @@
 
 
     <section>
-      <p id='sliderButton'></p>
       <div id='slider' class='rslider'></div>
       <!-- <div id='tempDiv'><p id='currentTemp'></p></div> -->
+      <button id="togglePowerSaving">Toggle power saving</button>
+      <button id="resetTemp">Reset temperature</button>
       <p>
         <!-- <button id="increaseTemp">Increase temperature</button>
         <button id="decreaseTemp">Decrease temperature</button> -->
-        <button id="resetTemp">Reset temperature</button>
+
         Power saving mode is: <span id='powerStatus'>on</span>
-        <button id="togglePowerSaving">Toggle power saving</button>
+
       </p>
 
       <!-- <p id='sliderButton'></p>
       <div id='slider' class='rslider'></div> -->
 
       <div class='cityWeather'>
+        <p>Get the weather for your city:</p>
         <input type="text" name="city" placeholder="Enter city..." id="cityInput"/>
         <input type="submit" value="Submit" id="citySubmit"/>
         <p id='cityTemp'></p>

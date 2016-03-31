@@ -11,9 +11,9 @@ $(document).ready(function() {
     max: 32,
     startAngle: 45,
     mouseScrollAction: true,
-    editableTooltip: true,
+    editableTooltip: false,
     radius: 350,
-    width: 6,
+    width: 10,
     handleSize: "+32",
     tooltipFormat: function (args) {
         return args.value + "\u00B0C";
@@ -21,14 +21,18 @@ $(document).ready(function() {
 
   });
   $("#slider").on("change", function (e) {
-    console.log(e.value);
     thermostat.temp = e.value;
     if(e.value > thermostat.maxTemp){
       $("#slider").roundSlider("option", "value", 25);
       thermostat.temp =25;
     }
+  });
+
+  $("#slider").on("drag", function (e) {
+    thermostat.temp = e.value;
     updateTemp();
-});
+  });
+
 
   $('#citySubmit').click(function() {
     var input = document.getElementById("cityInput").value;
@@ -81,14 +85,6 @@ $(document).ready(function() {
       $("#slider").roundSlider("option", "value", 25);
     }
     updateTemp();
-  });
-
-  $('.rs-move').mouseenter(function() {
-    $('#sliderButton').text("Slide to change temperature");
-  });
-
-  $('.rs-move').mouseleave(function() {
-    $('#sliderButton').text("");
   });
 
 

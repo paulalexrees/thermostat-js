@@ -43,24 +43,29 @@ button:hover {
 }
 
 section {
+  margin:0px;
   position: fixed;
   left: 30%;
   text-align: center;
 }
 
-#sliderButton {
-  height: 20px;
-  z-index: 0;
+#citySubmit{
+  width:100px;
+}
+#citySubmit:hover{
+  color:  #54BBE0;
 }
 
 #resetTemp {
-  positon: relative;
-  bottom: 30px;
+  margin:0px auto;
+  position: absolute;
+  bottom: 35%;
   left: 15%;
 }
 
 #togglePowerSaving {
-  position: relative;
-  bottom: 126px;
+  margin:0px auto;
+  position: absolute;
+  bottom: 35%;
   left: 65%;
 }
