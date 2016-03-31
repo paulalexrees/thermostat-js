@@ -13,7 +13,7 @@ p {
   font-family: Futura;
 }
 .low-usage{
-  background-color: green;
+  background-color: #33cc33;
   color: white;
 }
 .medium-usage{
@@ -22,4 +22,45 @@ p {
 .high-usage{
   background-color: red;
   color: white;
+}
+
+#powerStatus {
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  position: relative;
+  /*left: 200px;*/
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100px;
+  z-index: 1;
+}
+
+button:hover {
+  color: #54BBE0;
+}
+
+section {
+  position: fixed;
+  left: 30%;
+  text-align: center;
+}
+
+#sliderButton {
+  height: 20px;
+  z-index: 0;
+}
+
+#resetTemp {
+  positon: relative;
+  bottom: 100px;
+  left: 15%;
+}
+
+#togglePowerSaving {
+  position: relative;
+  bottom: 197px;
+  left: 65%;
 }

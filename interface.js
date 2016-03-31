@@ -75,13 +75,22 @@ $(document).ready(function() {
 
   $('#togglePowerSaving').click(function() {
     thermostat.togglePowerSaving();
-    thermostat.powerSavingOn ? $('#powerStatus').text("on") : $('#powerStatus').text("off");
+    thermostat.powerSavingOn ? $('#powerStatus').text("ON") : $('#powerStatus').text("OFF");
     var obj = $("#slider").data("roundSlider");
     if(obj.option("value") > thermostat.maxTemp){
       $("#slider").roundSlider("option", "value", 25);
     }
     updateTemp();
   });
+
+  $('.rs-move').mouseenter(function() {
+    $('#sliderButton').text("Slide to change temperature");
+  });
+
+  $('.rs-move').mouseleave(function() {
+    $('#sliderButton').text("");
+  });
+
 
   function updateTemp() {
     $('#currentTemp').text("The current temperature is: " + thermostat.temp);

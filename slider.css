@@ -3,6 +3,8 @@
     width: 500px !important;
     overflow: hidden;
     padding: 15px;
+    position: relative;
+    top: 50px;
 }
 #slider .rs-container {
     margin-left: -350px; /* here 300 is the radius value */
@@ -18,13 +20,18 @@
     border-width: 0px;
 }
 
+#slider {
+  z-index: 1;
+}
+
 /* Appearance related changes */
 .rs-control .rs-range-color {
-    //background-color: #54BBE0;
+    /*background-color: #54BBE0;*/
     background-color: red;
 }
 .rs-control .rs-path-color {
-    background-color: #5f5f5f;
+    /*background-color: #5f5f5f;*/
+    background-color: #33cc33;
 }
 .rs-control .rs-handle {
     background-color: #51c5cf;
