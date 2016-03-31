@@ -1,0 +1,19 @@
+#tempDiv{
+  width: 250px;
+  height:25px;
+}
+
+#currentTemp {
+  font-size: 20px;
+}
+.low-usage{
+  background-color: green;
+  color: white;
+}
+.medium-usage{
+  background-color: yellow;
+}
+.high-usage{
+  background-color: red;
+  color: white;
+}
