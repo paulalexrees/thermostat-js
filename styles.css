@@ -1,10 +1,16 @@
 #tempDiv{
-  width: 250px;
+  width: 270px;
   height:25px;
+  display: inline-block;
+}
+
+p {
+  font-family: Futura;
 }
 
 #currentTemp {
   font-size: 20px;
+  font-family: Futura;
 }
 .low-usage{
   background-color: green;

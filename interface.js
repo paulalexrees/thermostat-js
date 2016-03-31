@@ -3,6 +3,32 @@ $(document).ready(function() {
 
   updateTemp();
 
+  $.ajax({
+
+    url: "http://api.openweathermap.org/data/2.5/weather",
+
+    data: {
+      q: "london",
+      appid: "c2655f9295a6ab2354dbcff1eb0e5fa7",
+      units: "metric"
+    },
+
+    dataType: "json",
+  })
+
+  .done(function(data) {
+    $('#cityTemp').text("The current temperature in London is: " + data['main']['temp'] +"C");
+  })
+
+  .fail(function(xhr, status, errorThrown) {
+    alert("It's too late, you're going to die.");
+  })
+
+  .always(function() {
+    alert("Try not to melt...");
+  });
+
+
   $('#increaseTemp').click(function() {
     thermostat.increaseTemp();
     updateTemp();
