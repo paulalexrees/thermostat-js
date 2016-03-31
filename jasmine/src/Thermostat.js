@@ -30,6 +30,9 @@ Thermostat.prototype.downButton = function(){
 };
 
 Thermostat.prototype.powerSavingOn = function(){
+  if(this.temp > MAX_TEMP_POWER_SAVING){
+    this.temp = MAX_TEMP_POWER_SAVING;
+  };
 	this.savingModeOn = true;
 };
 

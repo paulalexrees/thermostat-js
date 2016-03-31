@@ -40,6 +40,16 @@ describe("Feature Test",function(){
     expect(thermostat.maxTemp()).toEqual(MAX_TEMP_POWER_SAVING_OFF);
   });
 
+  it('resets to 25 degrees if above that value when power saving is turned on', function(){
+    thermostat.powerSavingOff();
+    for(i=1;i<=15;i++){
+      thermostat.upButton();
+    };
+    thermostat.powerSavingOn();
+    expect(thermostat.temp).toEqual(MAX_TEMP_POWER_SAVING);
+
+  });
+
   it('resets to default when you hit the reset button', function(){
     spyOn(thermostat,'getTemp').and.returnValue(18);
     thermostat.resetButton();

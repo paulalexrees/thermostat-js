@@ -50,6 +50,7 @@ describe("Thermostat", function(){
     expect(thermostat.maxTemp()).toEqual(MAX_TEMP_POWER_SAVING_OFF);
   });
 
+
   describe('Display colour', function(){
 
 
