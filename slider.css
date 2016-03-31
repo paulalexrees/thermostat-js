@@ -1,0 +1,31 @@
+#slider {
+    height: 110px !important;
+    width: 500px !important;
+    overflow: hidden;
+    padding: 15px;
+}
+#slider .rs-container {
+    margin-left: -350px; /* here 300 is the radius value */
+    left: 50%;
+}
+#slider .rs-tooltip {
+    top: 60px;
+}
+#slider .rs-tooltip-text {
+    font-size: 25px;
+}
+#slider .rs-border{
+    border-width: 0px;
+}
+
+/* Appearance related changes */
+.rs-control .rs-range-color {
+    //background-color: #54BBE0;
+    background-color: red;
+}
+.rs-control .rs-path-color {
+    background-color: #5f5f5f;
+}
+.rs-control .rs-handle {
+    background-color: #51c5cf;
+}

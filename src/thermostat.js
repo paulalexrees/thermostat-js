@@ -19,14 +19,17 @@ Thermostat.prototype.decreaseTemp = function () {
 };
 
 Thermostat.prototype.togglePowerSaving = function () {
-  if (this.maxTemp === 25) {
+  if (this.powerSavingOn) {
     this.maxTemp = 32;
     this.powerSavingOn = false;
   } else {
+    if(this.temp > 25){
+      this.temp = 25;
+    }
     this.maxTemp = 25;
-    this.temp = 25;
     this.powerSavingOn = true;
   }
+
 };
 
 Thermostat.prototype.resetTemp = function () {
