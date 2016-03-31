@@ -24,6 +24,7 @@ Thermostat.prototype.togglePowerSaving = function () {
     this.powerSavingOn = false;
   } else {
     this.maxTemp = 25;
+    this.temp = 25;
     this.powerSavingOn = true;
   }
 };
