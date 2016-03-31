@@ -8,11 +8,10 @@ class Thermostat < Sinatra::Base
   # get "/" do
   #   send_file "src/thermostat.html"
   # end
-  post '/temperature', provides: :json do
+  post '/temperature' do
     response['Access-Control-Allow-Origin'] = '*'
     p session[:temp] = params[:temp]
     # p request.body.read
-    redirect "/temperature"
   end
 
   get '/temperature' do
