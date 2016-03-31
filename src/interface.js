@@ -6,6 +6,8 @@ $(document).ready(function(){
   function updateDisplay() {
     $('#temperature').text(thermostat.getCurrentTemperature());
     $('#temperature').attr('class', thermostat.temperatureColour());
+    $('#powerSaveSwitch').attr('class',thermostat.powerSaveStatus());
+
   };
 
   $('#increaseTemperature').on('click', function() {
@@ -21,6 +23,7 @@ $(document).ready(function(){
   $('#powerSaveSwitch').on('click', function() {
     thermostat.powerSaveSwitch();
     $('#powerSave').text(thermostat.powerSaveStatus());
+    updateDisplay();
   });
 
   $('#resetTemperature').on('click', function() {

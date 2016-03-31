@@ -13,7 +13,7 @@ describe("Thermostat", function(){
   });
 
   describe("#increaseTemperature", function(){
-    it("increase temoerature by 1", function(){
+    it("increase temperature by 1", function(){
       thermostat.increaseTemperature();
       expect(thermostat.getCurrentTemperature()).toEqual(21);
     });

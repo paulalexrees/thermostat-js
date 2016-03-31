@@ -6,23 +6,30 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <head>
   <body>
-    <dashboard>
-      <h1 id="temperature">20</h1>
-      <h2 id="powerSave">On</h2>
-    </dashboard>
-      <controls>
+    <div id="dashboard">
+      <div class="inline" id="temperature">20</div>
+      <div id="ontop" class="inline">
+        <div class="ontop" id="deg">&deg;</div>
+        <div class="ontop" id="C">C</div>
+      </div>
+    </div>
+      <section>
         <button id="increaseTemperature">+</button>
         <button id="decreaseTemperature">-</button>
-        <button id="powerSaveSwitch">Power Save</button>
+        <button id="powerSaveSwitch">PSM</button>
         <button id="resetTemperature">Reset</button>
-      </controls>
+      </section>
     <!-- <form> -->
-      <input id="city" type="text" placeholder="Enter your city">
-      <input id="submit" type="submit">
+
     <!-- </form> -->
     <p>
-      Current temperature in <span id="display-city">Catland</span> is: <span id="api-temp">500</span>&deg;C
+      <span id="display-city">Catland</span>: <span id="api-temp">500</span>&deg;C
     </p>
+
+    <div id="form">
+      <input id="city" type="text" placeholder="Enter your city">
+      <button id="submit" type="submit">Submit</button>
+    </div>
 
   <script src="interface.js"></script>
   <script src="thermostat.js"></script>
