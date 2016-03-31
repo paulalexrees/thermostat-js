@@ -40,23 +40,35 @@ $(document).ready(function(){
   });
 
 
-  (function(){
-    var temp = $("#temperature").val();
+  $("section button").click(function () {
+    var temp = thermostat.getCurrentTemperature();
     $.ajax({
       type: "POST",
       url: "http://localhost:4567/temperature",
-      data: {"temperature": temp}
+      async: false,
+      data: { "temp": temp },
+      crossDomain: true
     });
-    // $.post("http://localhost:4567/temperature", function(data) {
-    //   temp.html(data);
-    //   console.log(data);
-    // });
-  })();
+  });
 
-  // $(window).load(function(){
-  //   $.get("http://localhost:4567/temperature", function(data) {
-  //     $("#temperature").text(data.temp*******)
-  //   });
-  // });
+  $(window).load(function (){
+    // $.ajax({
+    //   type: "GET",
+    //   url: "http://localhost:4567/temperature",
+    //   data: data,
+    //   dataType: "json",
+    //   success: function (){
+    //     console.log(data);
+    //   }
+    // });
+
+    $.get("http://localhost:4567/temperature", function(data) {
+      console.log(data)
+      // $("#temperature").text(data.temp)
+    });
+
+  });
+
+
 
 })
