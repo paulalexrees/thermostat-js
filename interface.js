@@ -3,29 +3,30 @@ $(document).ready(function() {
 
   updateTemp();
 
-  $.ajax({
+  $('#citySubmit').click(function() {
+    var input = document.getElementById("cityInput").value;
 
-    url: "http://api.openweathermap.org/data/2.5/weather",
+    $.ajax({
 
-    data: {
-      q: "london",
-      appid: "c2655f9295a6ab2354dbcff1eb0e5fa7",
-      units: "metric"
-    },
+      url: "http://api.openweathermap.org/data/2.5/weather",
 
-    dataType: "json",
-  })
+      data: {
+        q: input,
+        appid: "c2655f9295a6ab2354dbcff1eb0e5fa7",
+        units: "metric"
+      },
 
-  .done(function(data) {
-    $('#cityTemp').text("The current temperature in London is: " + data['main']['temp'] +"C");
-  })
+      dataType: "json",
+    })
 
-  .fail(function(xhr, status, errorThrown) {
-    alert("It's too late, you're going to die.");
-  })
+    .done(function(data) {
+      $('#cityTemp').text("The current temperature in " + input + " is: " + data['main']['temp'] + "\u00B0C");
+    })
 
-  .always(function() {
-    alert("Try not to melt...");
+    .fail(function(xhr, status, errorThrown) {
+      alert("It's too late, you're going to die.");
+    });
+
   });
 
 
