@@ -55,12 +55,12 @@ section {
 
 #resetTemp {
   positon: relative;
-  bottom: 100px;
+  bottom: 30px;
   left: 15%;
 }
 
 #togglePowerSaving {
   position: relative;
-  bottom: 197px;
+  bottom: 126px;
   left: 65%;
 }
