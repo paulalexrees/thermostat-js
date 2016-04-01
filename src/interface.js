@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+  $.get("http://localhost:4567/temp", function(data) {
+  });
+
+
+
+
   var thermostat = new Thermostat;
   updateDisplay();
 
@@ -7,6 +13,14 @@ $(document).ready(function(){
     $('#temperature').text(thermostat.getCurrentTemperature());
     $('#temperature').attr('class', thermostat.temperatureColour());
     $('#powerSaveSwitch').attr('class',thermostat.powerSaveStatus());
+
+
+  $.ajax({
+    url: "http://localhost:4567/temp",
+    type: "POST",
+    data: JSON.stringify(thermostat.getCurrentTemperature()),
+    contentType: 'application/json',  
+  });
 
   };
 
@@ -40,32 +54,5 @@ $(document).ready(function(){
   });
 
 
-  $("section button").click(function () {
-    var temp = thermostat.getCurrentTemperature();
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:4567/temperature",
-      async: false,
-      data: { "temp": temp },
-      crossDomain: true
-    });
-  });
 
-  $(window).load(function (){
-    // $.ajax({
-    //   type: "GET",
-    //   url: "http://localhost:4567/temperature",
-    //   data: data,
-    //   dataType: "json",
-    //   success: function (){
-    //     console.log(data);
-    //   }
-    // });
-
-    $.get("http://localhost:4567/temperature", function(data) {
-      console.log(data)
-      // $("#temperature").text(data.temp)
-    });
-
-  });
 })

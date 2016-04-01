@@ -5,7 +5,7 @@ require 'dm-postgres-adapter'
 class Temp
   include DataMapper::Resource
 
-  roperty :id, Serial
+  property :id, Serial
   property :temp, Integer
 
 
