@@ -18,8 +18,8 @@ $(document).ready(function(){
   $.ajax({
     url: "http://localhost:4567/temp",
     type: "POST",
-    data: JSON.stringify(thermostat.getCurrentTemperature()),
-    contentType: 'application/json',  
+    data: JSON.stringify({temp:thermostat.getCurrentTemperature()}),
+    contentType: 'application/json',
   });
 
   };

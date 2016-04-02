@@ -8,6 +8,8 @@ class Thermostat < Sinatra::Base
 
   post '/temp' do
     headers 'Access-Control-Allow-Origin' => '*'
+    $temp = params[:temp]
+    p $temp
   end
 
   get '/temp' do
